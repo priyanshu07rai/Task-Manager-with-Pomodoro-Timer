@@ -6,7 +6,7 @@ from django.forms import TimeField
 
 class Tasks(models.Model):
     status_choices = [
-        ("pending", "In Progress"), ("completed", "Completed"),
+        ("pending", "To-Do"), ("ongoing", "In-Progress"), ("completed", "Completed"),
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Tasks")
