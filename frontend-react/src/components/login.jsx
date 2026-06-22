@@ -56,17 +56,8 @@ const Login = () => {
                     'http://127.0.0.1:8000/api/auth/register/',
                     userData
                 )
-                localStorage.setItem(
-                    'accessToken',
-                    response.data.access
-                )
-                localStorage.setItem(
-                    'refreshToken',
-                    response.data.refresh
-                )
-                setIsLoggedIn(true);
+                alert("Account created successfully , please login ");
                 setIsLogin(true);
-                navigate('/Dashboard');
             }
             catch(error){
                 alert("Username already exists");

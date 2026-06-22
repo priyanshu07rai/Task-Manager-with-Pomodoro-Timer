@@ -11,7 +11,7 @@ function Dashboard() {
 
                 const response =
                     await axiosInstance.get(
-                        "protected-view/"
+                        "auth/protected-view/"
                     );
 
                 console.log(response.data);
