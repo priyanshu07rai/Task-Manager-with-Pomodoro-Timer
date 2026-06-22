@@ -1,12 +1,35 @@
-import React from 'react';
- 
-const Dashboard = () => {
+import { useEffect } from "react";
+import axiosInstance from "./axiosInstance";
+
+function Dashboard() {
+
+    useEffect(() => {
+
+        async function fetchData() {
+
+            try {
+
+                const response =
+                    await axiosInstance.get(
+                        "protected-view/"
+                    );
+
+                console.log(response.data);
+
+            }
+
+            catch (error) {
+
+                console.log(error);
+
+            }
+
+        }
+        fetchData();
+    }, [])
+
     return (
-        <div>
-            Dashboard
-        </div>
-    );
+        <h1>Dashboard</h1>
+    )
 }
- 
- 
 export default Dashboard;

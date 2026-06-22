@@ -1,47 +1,39 @@
-from rest_framework import status
-from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.contrib.auth.models import User
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
+from rest_framework import status
 
-from .serializers import RegisterSerializer
+@api_view(['POST'])
+def register(request):
 
-from django.contrib.auth import authenticate
+    username = request.data['username']
+    email = request.data['email']
+    password = request.data['password']
 
-# Create your views here.
-
-class RegisterView(APIView):
-    def post(self, request):
-        serializer = RegisterSerializer(data = request.data)
-        if serializer.is_valid():
-            serializer.save()
-
-            return Response(
-                {"message": "User Created"},
-                status = status.HTTP_201_CREATED
-            )
-
+    if User.objects.filter(username=username).exists():
         return Response(
-            serializer.errors,
-            status = status.HTTP_400_BAD_REQUEST
+            {
+                'error': 'Username already exists'
+            },
+            status=status.HTTP_400_BAD_REQUEST
         )
 
-class LoginView(APIView):
-    def post(self, request):
+    User.objects.create_user(
+        username=username,
+        email=email,
+        password=password
+    )
 
-        username = request.data.get('username')
-        password = request.data.get('password')
+    return Response({
+        'message':'User created'
+    })
 
-        user = authenticate(
-            username = username,
-            password= password
-        )
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def protected_view(request):
 
-        if user:
-            return Response(
-                {"message": "Login Successful"},
-                status = status.HTTP_302_FOUND
-            )
-
-        return Response(
-            {"error": "Invalid Credentials"},
-            status = status.HTTP_400_BAD_REQUEST
-        )
+    return Response({
+        'message':'Success'
+    })
