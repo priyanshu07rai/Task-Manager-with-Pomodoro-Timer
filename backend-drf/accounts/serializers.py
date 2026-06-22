@@ -1,7 +1,4 @@
-from dataclasses import fields
-
 from django.contrib.auth.models import User
-from django.db.models.fields.files import FieldFile
 
 from rest_framework import serializers
 
