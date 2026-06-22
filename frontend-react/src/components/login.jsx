@@ -66,7 +66,6 @@ const Login = () => {
 
     return (
         <>
-           return (
 
                     <div className="min-h-screen bg-[#0b0120] flex">
 
@@ -420,7 +419,6 @@ const Login = () => {
                         </div>
 
                     </div>
-                )
 
         </>
     );

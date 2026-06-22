@@ -1,5 +1,10 @@
 import { useEffect } from "react";
 import axiosInstance from "./axiosInstance";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+import StatsCard from "./StatsCard";
+import TaskList from "./TaskList";
+import Timer from "./Timer";
 
 function Dashboard() {
 
@@ -29,7 +34,45 @@ function Dashboard() {
     }, [])
 
     return (
-        <h1>Dashboard</h1>
+            <>
+        <div className="min-h-screen bg-[#050816] flex">
+
+            {/* Sidebar */}
+
+            <Sidebar />
+
+            {/* Main Content */}
+
+            <div className="flex-1 px-10 py-8 overflow-y-auto">
+
+                {/* Header */}
+
+                <Header />
+
+                {/* Stats Cards */}
+
+                <StatsCard />
+
+                {/* Bottom Section */}
+
+                <div className="grid grid-cols-2 gap-8 mt-8">
+
+                    {/* Task List */}
+
+                    <TaskList />
+
+                    {/* Timer */}
+
+                    <Timer />
+
+                </div>
+
+            </div>
+
+        </div>
+            </>
     )
+
 }
+
 export default Dashboard;
