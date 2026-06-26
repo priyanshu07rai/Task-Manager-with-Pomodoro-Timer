@@ -34,7 +34,7 @@ SECRET_KEY = "django-insecure-8vyqy6eibeznfz@p=vu3qfthx1xf#07t0v2#ggeeuy7fzz^4jy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://task-manager-with-pomodoro-timer.onrender.com']
 
 
 # Application definition
@@ -138,4 +138,5 @@ STATIC_URL = "static/"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://task-manager-with-pomodoro-timer.vercel.app/",
 ]
