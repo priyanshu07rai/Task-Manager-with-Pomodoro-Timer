@@ -35,8 +35,13 @@ SECRET_KEY = "django-insecure-8vyqy6eibeznfz@p=vu3qfthx1xf#07t0v2#ggeeuy7fzz^4jy
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "task-manager-api.onrender.com",
+    "task-manager-with-pomodoro-timer.onrender.com",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://task-manager-with-pomodoro-timer-1.onrender.com",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -95,7 +100,7 @@ REST_FRAMEWORK = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": "/var/data/db.sqlite3",
     }
 }
 
