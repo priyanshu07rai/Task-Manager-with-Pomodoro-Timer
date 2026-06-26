@@ -43,9 +43,10 @@ const Login = () => {
         setIsLoggedIn(true);
         navigate("/Dashboard");
     }
-    catch (error) {
-        alert("Invalid Username or Password");
-    }
+   catch (error) {
+    console.log(error.response?.data);
+    alert(JSON.stringify(error.response?.data));
+}
 
     }
     const handleRegister = async (e) => {
