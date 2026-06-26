@@ -28,6 +28,10 @@ const Login = () => {
         "/token/",
         userData
     );
+        
+        console.log("Full response:", response);
+        console.log("Response data:", response.data);
+        
         localStorage.setItem(
             "accessToken",
             response.data.access
