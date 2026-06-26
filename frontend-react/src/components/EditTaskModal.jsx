@@ -14,10 +14,10 @@ function EditTaskModal({
 }){
 
     const [taskName, setTaskName] =
-        useState(task.Task_Name);
+        useState(task.task_name);
 
     const [description, setDescription] =
-        useState(task.Task_Description);
+        useState(task.task_description);
 
     const [status, setStatus] =
         useState(task.status);
@@ -30,9 +30,9 @@ function EditTaskModal({
 
         const updatedTask = {
 
-            Task_Name: taskName,
+            task_name: taskName,
 
-            Task_Description: description,
+            task_description: description,
 
             status: status,
 

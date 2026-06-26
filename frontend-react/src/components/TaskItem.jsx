@@ -38,9 +38,9 @@ function TaskItem({ task ,setTasks,tasks }) {
 
         const updatedTask = {
 
-            Task_Name: task.Task_Name,
+            task_name: task.task_name,
 
-            Task_Description: task.Task_Description,
+            task_description: task.task_description,
 
             status:
 
@@ -129,18 +129,18 @@ function TaskItem({ task ,setTasks,tasks }) {
 
                 <h3 className="text-white text-xl font-semibold">
 
-                    {task.Task_Name}
+                    {task.task_name}
 
                 </h3>
 
 
                 {
 
-                    task.Task_Description &&
+                    task.task_description &&
 
                     <p className="text-gray-500 text-sm mt-1">
 
-                        {task.Task_Description}
+                        {task.task_description}
 
                     </p>
 

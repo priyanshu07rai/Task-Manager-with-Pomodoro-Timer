@@ -62,9 +62,9 @@ function Timer({ tasks, setTasks }) {
 
             const updatedTask = {
 
-                Task_Name: currentTask.Task_Name,
+                task_name: currentTask.task_name,
 
-                Task_Description: currentTask.Task_Description,
+                task_description: currentTask.task_description,
 
                 status: "ongoing",
 
@@ -122,9 +122,9 @@ function Timer({ tasks, setTasks }) {
 
         const updatedTask = {
 
-            Task_Name: currentTask.Task_Name,
+            task_name: currentTask.task_name,
 
-            Task_Description: currentTask.Task_Description,
+            task_description: currentTask.task_description,
 
             status: "completed",
 
@@ -240,7 +240,7 @@ function Timer({ tasks, setTasks }) {
 
                             >
 
-                                {task.Task_Name}
+                                {task.task_name}
 
                             </option>
 

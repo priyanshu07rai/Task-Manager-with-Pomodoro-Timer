@@ -18,13 +18,13 @@ function AddTaskModal({ setShowModal, tasks, setTasks }) {
 
         const taskData = {
 
-            Task_Name: taskName,
+            task_name: taskName,
 
-            Task_Description: description,
+            task_description: description,
 
             status: status,
 
-            due_time: dueTime
+            due_time: dueTime || null
 
         };
 
@@ -82,7 +82,7 @@ function AddTaskModal({ setShowModal, tasks, setTasks }) {
                 border-gray-800
                 rounded-3xl
                 p-8
-                w-500px
+                w-[500]px
                 "
             >
 
