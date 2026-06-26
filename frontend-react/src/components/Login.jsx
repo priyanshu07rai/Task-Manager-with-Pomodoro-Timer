@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from 'axios'
+import axiosInstance from "../axios";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import { useNavigate } from "react-router-dom";
@@ -24,10 +24,10 @@ const Login = () => {
         password
     };
     try {
-      const response = await axios.post(
-            "http://127.0.0.1:8000/api/token/",
-            userData
-        );
+      const response = await axiosInstance.post(
+        "/token/",
+        userData
+    );
         localStorage.setItem(
             "accessToken",
             response.data.access
@@ -52,8 +52,8 @@ const Login = () => {
                 password
             }
             try{
-                const response = await axios.post(
-                    'http://127.0.0.1:8000/api/auth/register/',
+                await axiosInstance.post(
+                    "/auth/register/",
                     userData
                 )
                 alert("Account created successfully , please login ");
